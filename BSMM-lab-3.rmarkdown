@@ -8,9 +8,11 @@ editor: visual
 self-contained: true
 ---
 
+
 ## Setup
 
 Load packages and data:
+
 
 ```{r load-pkg-data}
 #| message: false
@@ -19,9 +21,11 @@ Load packages and data:
 boston_cocktails <- readr::read_csv('data/boston_cocktails.csv')
 ```
 
+
 ## Exercises
 
 ### Exercise 1
+
 
 ```{r}
 # Load the libraries #
@@ -44,9 +48,11 @@ median_measure_number <- median(boston_cocktails$measure_number)
 print(median_measure_number)
 ```
 
+
 The median measure amount across across all cocktails is 1.
 
 ### Exercise 2
+
 
 ```{r}
 
@@ -76,9 +82,11 @@ gin_in_leap_frog_highball <- cleaned_table |>
 print(gin_in_leap_frog_highball)
 ```
 
+
 The **Leap Frog Highball** contains 2 of gin
 
 ### Exercise 3
+
 
 ```{r}
 # load the library #
@@ -104,9 +112,11 @@ print(num_predictor_vars)
 
 ```
 
+
 0 predictor variables are prepped by the recipe.
 
 ### Exercise 4
+
 
 ```{r}
 
@@ -122,9 +132,11 @@ print(most_used_ingredient ) # display the most used ingredient on an average #
 
 ```
 
+
 On average the most used ingredient in the Boston Cocktails dataset is cranberry juice.
 
 ### Exercise 5
+
 
 ```{r}
 library(recipes)
@@ -164,6 +176,7 @@ ggplot(boston_cocktails_pca_filtered, aes(x = value, y = terms, fill = terms)) +
 
 ```
 
+
 Describe describe the drinks represented by PC1
 
 -   If row_id is between 0 and 0.25 and has a positive loading in PC1, then when row_id is in this range, it contributes positively to higher values of PC1.
@@ -173,6 +186,7 @@ Describe describe the drinks represented by PC1
 -   If ingredient_number is between 0 and 0.7 and has a positive loading in PC1, then when ingredient_number is in this range, it contributes positively to higher values of PC1.
 
 ### Exercise 6
+
 
 ```{r}
 # Load required libraries
@@ -217,9 +231,11 @@ table_pca_ingredients <- top_ingredients_table %>%
 table_pca_ingredients
 ```
 
+
 The characteristic alcoholic beverage of each of the first 4 principle components is less than or equal to 0.
 
 ### Exercise 7
+
 
 ```{r}
 
@@ -264,6 +280,8 @@ ggplot(pca_data, aes(PC1, PC2, label = name)) +
 
 ```
 
+
 How would you interpret the results of a PCA analysis for a client?
 
 In this PCA analysis, PC1 and PC2 fail to distinctly separate data points, suggesting a complex or low-variance structure in the dataset. Further exploration of higher-dimensional components may be needed to uncover hidden patterns.
+
